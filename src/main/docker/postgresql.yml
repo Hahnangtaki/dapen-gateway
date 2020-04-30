@@ -1,0 +1,11 @@
+version: '2'
+services:
+  dapen-postgresql:
+    image: postgres:12.1
+    # volumes:
+    #     - ~/volumes/jhipster/dapen/postgresql/:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=dapen
+      - POSTGRES_PASSWORD=
+    ports:
+      - 5432:5432
