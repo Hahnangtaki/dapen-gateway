@@ -1,0 +1,311 @@
+entity Country {
+	countryCodeDigits String,
+    countryName String,
+    nationality String
+}
+
+entity Province {
+	provinceCode String,
+    provinceName String
+}
+
+entity City {
+	cityCode String,
+    cityName String
+}
+
+entity Visitor {
+	email String maxlength(50) unique,
+    mobilePhone String maxlength(14) unique,
+    encodedPassword String maxlength(100),
+    memberStatus Integer maxlength(1),
+    memberSince LocalDate
+}
+
+entity OtpHistory {
+	reffNo String maxlength(10),
+    encodedOtp String maxlength(100),
+    createdTime ZonedDateTime,
+    executedTime ZonedDateTime,
+    expiredTime ZonedDateTime,
+    retryMax Integer maxlength(1),
+    retryCount Integer maxlength(1)
+}
+
+entity SerialGenerator {
+	processCode String maxlength(1),
+    processName String,
+    counter Long
+}
+
+relationship OneToMany {
+	Visitor to OtpHistory
+}
+
+relationship OneToMany {
+	Country to Province
+}
+
+relationship OneToMany {
+	Province to City
+}
+
+/*
+entity Bank {
+	bankCode String maxlength(10) unique,
+    bankName String maxlength(60),
+    swiftCode String maxlength(20),
+    
+    createSystemDate LocalDate,
+    createDate ZonedDateTime,
+    createUserId Long,
+    lastModificationSystemDate LocalDate,
+    lastModificationDate ZonedDateTime,
+    lastModificationUserId Long
+}
+
+entity Currency {
+	currencyCode String maxlength(3) unique,
+    currencyName String,
+    symbol String,
+    
+    createSystemDate LocalDate,
+    createDate ZonedDateTime,
+    createUserId Long,
+    lastModificationSystemDate LocalDate,
+    lastModificationDate ZonedDateTime,
+    lastModificationUserId Long
+}
+
+entity BankCustody {
+	kustodiCode String maxlength(10) unique,
+    kustodiName String,
+    address String,
+    
+    createSystemDate LocalDate,
+    createDate ZonedDateTime,
+    createUserId Long,
+    lastModificationSystemDate LocalDate,
+    lastModificationDate ZonedDateTime,
+    lastModificationUserId Long
+}
+
+entity Broker {
+	brokerCode String maxlength(10) unique,
+    brokerName String,
+    address String,
+    
+    createSystemDate LocalDate,
+    createDate ZonedDateTime,
+    createUserId Long,
+    lastModificationSystemDate LocalDate,
+    lastModificationDate ZonedDateTime,
+    lastModificationUserId Long
+}
+
+entity Obligasi {
+	obligasiCode String maxlength(20) unique,
+    localCode String maxlength(20) unique,
+    obligasiName String,
+    marketCode String maxlength(20),
+    typeCode String maxlength(1),
+    isinCode String,
+    
+    createSystemDate LocalDate,
+    createDate ZonedDateTime,
+    createUserId Long,
+    lastModificationSystemDate LocalDate,
+    lastModificationDate ZonedDateTime,
+    lastModificationUserId Long
+}
+
+entity Saham {
+	sahamCode String maxlength(10) unique,
+    sahamName String,
+    marketCode String maxlength(20),
+    tanggalTerbit LocalDate,
+    
+    createSystemDate LocalDate,
+    createDate ZonedDateTime,
+    createUserId Long,
+    lastModificationSystemDate LocalDate,
+    lastModificationDate ZonedDateTime,
+    lastModificationUserId Long
+}
+
+entity Reksadana {
+	reksadanaCode String maxlength(20) unique,
+    reksadanaName String,
+    reksadanaType String
+    
+    createSystemDate LocalDate,
+    createDate ZonedDateTime,
+    createUserId Long,
+    lastModificationSystemDate LocalDate,
+    lastModificationDate ZonedDateTime,
+    lastModificationUserId Long
+}
+
+entity CPObligasi {
+	tanggal LocalDate,
+    nilaiCP BigDecimal,
+    
+    createSystemDate LocalDate,
+    createDate ZonedDateTime,
+    createUserId Long,
+    lastModificationSystemDate LocalDate,
+    lastModificationDate ZonedDateTime,
+    lastModificationUserId Long
+}
+
+entity CPSaham {
+	tanggal LocalDate,
+    nilaiCP BigDecimal,
+    
+    createSystemDate LocalDate,
+    createDate ZonedDateTime,
+    createUserId Long,
+    lastModificationSystemDate LocalDate,
+    lastModificationDate ZonedDateTime,
+    lastModificationUserId Long
+}
+
+entity CPReksadana {
+	tanggal LocalDate,
+    nilaiCP BigDecimal,
+    
+    createSystemDate LocalDate,
+    createDate ZonedDateTime,
+    createUserId Long,
+    lastModificationSystemDate LocalDate,
+    lastModificationDate ZonedDateTime,
+    lastModificationUserId Long
+}
+
+entity ProgramDapen {
+	programCode String maxlength(10) unique,
+    programName String maxlength(60),
+    
+    createSystemDate LocalDate,
+    createDate ZonedDateTime,
+    createUserId Long,
+    lastModificationSystemDate LocalDate,
+    lastModificationDate ZonedDateTime,
+    lastModificationUserId Long
+}
+
+entity ConfigFiscalYear {
+	fiscalYearCode String maxlength(10) unique,
+    fiscalYearName String maxlength(100),
+    startDate LocalDate,
+    endDate LocalDate,
+    status String maxlength(1),
+    
+    createSystemDate LocalDate,
+    createDate ZonedDateTime,
+    createUserId Long,
+    lastModificationSystemDate LocalDate,
+    lastModificationDate ZonedDateTime,
+    lastModificationUserId Long
+}
+
+entity ConfigPeriod {
+	periodCode String maxlength(10) unique,
+    periodName String maxlength(100),
+    startDate LocalDate,
+    endDate LocalDate,
+    status String maxlength(1),
+    specialPeriod Boolean,
+    
+    createSystemDate LocalDate,
+    createDate ZonedDateTime,
+    createUserId Long,
+    lastModificationSystemDate LocalDate,
+    lastModificationDate ZonedDateTime,
+    lastModificationUserId Long
+}
+
+entity ChartOfAccount {
+	coaCode String maxlength(20) unique,
+    coaName String maxlength(60),
+    aliasName String maxlength(60),
+    plbs String maxlength(1),
+    category String maxlength(1),
+    normalBalance String maxlength(1),
+    balanceAmount BigDecimal,
+    
+    createSystemDate LocalDate,
+    createDate ZonedDateTime,
+    createUserId Long,
+    lastModificationSystemDate LocalDate,
+    lastModificationDate ZonedDateTime,
+    lastModificationUserId Long
+}
+
+entity ParameterInvestasi {
+
+}
+
+entity BankCompany {
+
+}
+
+entity LedgerAccount {
+
+}
+
+entity Budget {
+
+}
+
+entity ParamGolonganPegawai {
+
+}
+
+entity ParamLembur {
+
+}
+
+entity AsumsiFinancial {
+
+}
+
+entity AsumsiDemografi {
+
+}
+
+entity MetodeAktuaria {
+
+}
+
+relationship OneToMany {
+	Broker to Saham 
+}
+
+relationship OneToMany {
+	Saham to CPSaham
+}
+
+relationship OneToMany {
+	Obligasi to CPObligasi
+}
+
+relationship OneToMany {
+	Reksadana to CPReksadana
+}
+
+relationship OneToMany {
+	ConfigFiscalYear to ConfigPeriod
+}
+*/
+
+// Set pagination options
+//paginate Nasabah with pagination
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+
+// Set an angular suffix
+angularSuffix * with mySuffix
