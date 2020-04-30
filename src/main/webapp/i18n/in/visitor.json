@@ -1,0 +1,27 @@
+{
+  "dapenApp": {
+    "visitor": {
+      "home": {
+        "title": "Visitors",
+        "createLabel": "Buat Visitor baru",
+        "createOrEditLabel": "Buat atau edit Visitor",
+        "notFound": "No Visitors found"
+      },
+      "created": "Visitor dengan id {{ param }} telah dibuat",
+      "updated": "Visitor dengan id {{ param }} telah diperbaharui",
+      "deleted": "Visitor dengan id {{ param }} telah dihapus",
+      "delete": {
+        "question": "Apakah anda yakin ingin menghapus Visitor {{ id }}?"
+      },
+      "detail": {
+        "title": "Visitor"
+      },
+      "email": "Email",
+      "mobilePhone": "Mobile Phone",
+      "encodedPassword": "Encoded Password",
+      "memberStatus": "Member Status",
+      "memberSince": "Member Since",
+      "otpHistory": "Otp History"
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+    "name": "OtpHistory",
+    "fields": [
+        {
+            "fieldName": "reffNo",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "10"
+        },
+        {
+            "fieldName": "encodedOtp",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "100"
+        },
+        {
+            "fieldName": "createdTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "executedTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "expiredTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "retryMax",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "retryCount",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "visitor",
+            "otherEntityRelationshipName": "otpHistory",
+            "relationshipName": "visitor",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200430095200",
+    "entityTableName": "otp_history",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}
