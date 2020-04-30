@@ -1,0 +1,24 @@
+{
+  "dapenApp": {
+    "serialGenerator": {
+      "home": {
+        "title": "Serial Generators",
+        "createLabel": "Buat Serial Generator baru",
+        "createOrEditLabel": "Buat atau edit Serial Generator",
+        "notFound": "No Serial Generators found"
+      },
+      "created": "Serial Generator dengan id {{ param }} telah dibuat",
+      "updated": "Serial Generator dengan id {{ param }} telah diperbaharui",
+      "deleted": "Serial Generator dengan id {{ param }} telah dihapus",
+      "delete": {
+        "question": "Apakah anda yakin ingin menghapus Serial Generator {{ id }}?"
+      },
+      "detail": {
+        "title": "Serial Generator"
+      },
+      "processCode": "Process Code",
+      "processName": "Process Name",
+      "counter": "Counter"
+    }
+  }
+}

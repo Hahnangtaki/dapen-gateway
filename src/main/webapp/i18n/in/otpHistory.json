@@ -1,0 +1,29 @@
+{
+  "dapenApp": {
+    "otpHistory": {
+      "home": {
+        "title": "Otp Histories",
+        "createLabel": "Buat Otp History baru",
+        "createOrEditLabel": "Buat atau edit Otp History",
+        "notFound": "No Otp Histories found"
+      },
+      "created": "Otp History dengan id {{ param }} telah dibuat",
+      "updated": "Otp History dengan id {{ param }} telah diperbaharui",
+      "deleted": "Otp History dengan id {{ param }} telah dihapus",
+      "delete": {
+        "question": "Apakah anda yakin ingin menghapus Otp History {{ id }}?"
+      },
+      "detail": {
+        "title": "Otp History"
+      },
+      "reffNo": "Reff No",
+      "encodedOtp": "Encoded Otp",
+      "createdTime": "Created Time",
+      "executedTime": "Executed Time",
+      "expiredTime": "Expired Time",
+      "retryMax": "Retry Max",
+      "retryCount": "Retry Count",
+      "visitor": "Visitor"
+    }
+  }
+}
